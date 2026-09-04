@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus — Case Study — BL.co</title>
+<meta name="description" content="How Webtastic Games rebuilt tic-tac-toe from scratch — five themes, a minimax engine, and a case for taking small games seriously.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2374a9fa'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="projects">
+</div>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="nav-root"></div>
+<script src="assets/nav.js"></script>
+
+<main id="main">
+
+<section class="case-hero container">
+  <div class="breadcrumb reveal"><a href="index.html">Home</a><span>/</span><a href="projects.html">Projects</a><span>/</span><span class="current">Nexus</span></div>
+  <div class="case-meta-top reveal">
+    <div class="status live"><span class="dot"></span>Live</div>
+    <div class="pcard-tag" style="font-size:11px;">Webtastic Games</div>
+  </div>
+  <h1 class="h-display blur-in">Nexus</h1>
+  <p class="body-lg reveal" style="margin-top:20px; max-width:56ch;">Tic-tac-toe is the first game most people ever play against a computer. Nexus asked what it would take to make that first game worth returning to.</p>
+
+  <div class="case-stats reveal">
+    <div><div class="k">Role</div><div class="v">Design + Engineering</div></div>
+    <div><div class="k">Timeline</div><div class="v">6 Weeks, 2026</div></div>
+    <div><div class="k">Category</div><div class="v">Browser Game</div></div>
+    <div><div class="k">Status</div><div class="v">Live, Maintained</div></div>
+  </div>
+</section>
+
+<div class="case-media-full reveal"><div class="grid-overlay"></div><img src="assets/bl-co-logo.jpg" alt="" class="card-logo"></div>
+
+<section class="section">
+  <div class="container case-body">
+    <nav class="case-nav-rail reveal" aria-label="Case study sections">
+      <a href="#overview">Overview</a>
+      <a href="#challenge">Challenge</a>
+      <a href="#research">Research</a>
+      <a href="#process">Process</a>
+      <a href="#design-system">Design System</a>
+      <a href="#development">Development</a>
+      <a href="#results">Results</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+
+    <div>
+      <div class="case-block reveal" id="overview">
+        <div class="eyebrow">Overview</div>
+        <p class="editorial">"A game this simple has nowhere to hide. Every decision shows."</p>
+        <p class="body-lg" style="margin-top:24px;">Nexus is Webtastic Games' first shipped title — a from-scratch rebuild of tic-tac-toe with five visual themes and an unbeatable minimax opponent. It exists to prove a small, deliberately constrained idea can still be built to a real standard: considered motion, a genuine AI opponent instead of a random one, and a visual system that changes the feel of the game without changing the rules.</p>
+      </div>
+
+      <div class="case-block reveal" id="challenge">
+        <div class="eyebrow">Challenge</div>
+        <p>Tic-tac-toe is a solved game — with perfect play, it always ends in a draw. That's precisely what made it hard to design for. The brief wasn't "build tic-tac-toe," it was "make a solved game worth playing anyway." That meant the entire experience had to carry weight the ruleset couldn't: feel, pacing, visual identity, and an opponent that plays convincingly rather than randomly.</p>
+      </div>
+
+      <div class="case-block reveal" id="research">
+        <div class="eyebrow">Research</div>
+        <div class="case-two-col">
+          <p>We looked at how mobile game studios handle "solved" classics — checkers, connect four, chess openings — and found the pattern consistently: the ones that hold attention lean entirely on presentation and opponent quality, since the ruleset offers no fresh ground.</p>
+          <p>We also tested a dozen casual tic-tac-toe implementations already live on the web. Almost all used a random or lightly-weighted AI that could be beaten by accident. None had a theming system with real visual range rather than palette swaps.</p>
+        </div>
+      </div>
+
+      <div class="case-block reveal" id="process">
+        <div class="eyebrow">Process</div>
+        <p>Development split into two parallel tracks from day one: the game engine (board state, win detection, the minimax opponent with alpha-beta pruning for instant response) and the presentation layer (five themes, each with its own motion timing, palette, and win-state animation). Keeping these decoupled meant a theme could be swapped without touching game logic, and the engine could be hardened without any visual regression risk.</p>
+        <p>Playtesting focused on one question: does the opponent feel smart within the first three moves? Early builds played optimally from move one, which read as robotic. The shipped version plays a wider opening book before tightening into perfect defensive play mid-game — closer to how a sharp human opponent actually plays.</p>
+      </div>
+
+      <div class="case-block reveal" id="design-system">
+        <div class="eyebrow">Design System</div>
+        <p>Each of the five themes — Mono, Terminal, Paper, Neon Low, and Dusk — is a full token set: board color, mark color, grid weight, win-line animation, and sound-off haptic-style feedback via subtle motion. Themes share layout and spacing so switching never feels like a different app, only a different mood.</p>
+        <div class="case-gallery">
+          <div class="g-item"><span>Theme Grid — Placeholder</span></div>
+          <div class="g-item"><span>Win-State Animation — Placeholder</span></div>
+        </div>
+      </div>
+
+      <div class="case-block reveal" id="development">
+        <div class="eyebrow">Development</div>
+        <p>The opponent runs minimax with alpha-beta pruning and a shallow opening-move randomizer, evaluated client-side in well under a frame — no server round-trip, no loading state between moves. The whole build ships as static assets, so it loads instantly and works offline once cached.</p>
+        <div class="case-tech-list">
+          <span>Vanilla JavaScript</span><span>Canvas Rendering</span><span>Minimax + Alpha-Beta Pruning</span><span>CSS Custom Properties (Theming)</span><span>Service Worker Caching</span>
+        </div>
+
+        <div class="term-window" data-typewriter style="margin-top:32px;">
+          <div class="term-titlebar"><div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div><span class="term-path">~/bl.co/webtastic-games/nexus</span></div>
+          <div class="term-body">
+            <div class="term-line"><span class="term-prompt">$</span> bl deploy nexus --division=games</div>
+            <div class="term-line"><span class="term-ok">?</span> Build complete <span class="term-dim">(1.8s)</span></div>
+            <div class="term-line"><span class="term-ok">?</span> 5 themes compiled, 0 regressions</div>
+            <div class="term-line"><span class="term-ok">?</span> Assets optimized <span class="term-dim">— 78KB total</span></div>
+            <div class="term-line"><span class="term-dim">?</span> Deploying to production...</div>
+            <div class="term-line"><span class="term-ok">?</span> Live at <span class="term-prompt">nexus.bl.co</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-block reveal" id="results">
+        <div class="eyebrow">Results</div>
+        <p>Nexus shipped as Webtastic Games' proof of concept for the studio's actual thesis: small scope, real depth. It's the reference point every later Webtastic Games project gets measured against — if a mechanic can't hold up the way Nexus's opponent logic does, it isn't ready to ship.</p>
+        <div class="case-stats" style="border-top:none; padding-top:0; margin-top:24px;">
+          <div><div class="k">Themes Shipped</div><div class="v" data-countup="5">0</div></div>
+          <div><div class="k">AI Response Time</div><div class="v">&lt; 16ms</div></div>
+          <div><div class="k">Load Size</div><div class="v">Under 80KB</div></div>
+          <div><div class="k">Server Dependency</div><div class="v">None</div></div>
+        </div>
+      </div>
+
+      <div class="case-block reveal" id="gallery">
+        <div class="eyebrow">Gallery</div>
+        <div class="case-gallery">
+          <div class="g-item"><span>Board — Mono Theme</span></div>
+          <div class="g-item"><span>Board — Terminal Theme</span></div>
+          <div class="g-item"><span>Board — Paper Theme</span></div>
+          <div class="g-item"><span>Board — Dusk Theme</span></div>
+        </div>
+      </div>
+
+      <div class="case-block reveal" id="roadmap">
+        <div class="eyebrow">Future Roadmap</div>
+        <ul class="case-roadmap">
+          <li><span class="tag">Next</span><span class="body-md">A ranked difficulty ladder, so the opponent's opening book widens or narrows on request.</span></li>
+          <li><span class="tag">Planned</span><span class="body-md">Local two-player pass-and-play mode for the same device.</span></li>
+          <li><span class="tag">Exploring</span><span class="body-md">A sixth theme submitted through community feedback.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-next zone-alt divider-top">
+  <div class="container reveal">
+    <div class="label-caps" style="margin-bottom:18px;">Next Project</div>
+    <a href="projects.html">4¹5 Tests ?</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">BL<span class="dot">.</span>co</a>
+      <p class="body-md">The parent structure for software, web products, games, and digital experiments.</p>
+
+    </div>
+    <div class="footer-col"><span class="h-3">Companies</span><a href="brands.html#software">BL.Software</a><a href="brands.html#media">BL.Media</a><a href="brands.html#labs">BL.Labs</a><a href="brands.html#antar">Antar Studio</a></div>
+    <div class="footer-col"><span class="h-3">Portfolio</span><a href="projects.html">All Projects</a><a href="project-nexus.html">Case Study: Nexus</a><a href="journal.html">Journal</a></div>
+    <div class="footer-col"><span class="h-3">Company</span><a href="about.html">About</a><a href="now.html">Now</a><a href="contact.html">Contact</a><a href="partner.html">Partner</a></div>
+    <div class="footer-col"><span class="h-3">Connect</span><a href="mailto:laptopsystem1.1@gmail.com">laptopsystem1.1@gmail.com</a><a href="https://github.com/BLAMEDXD" target="_blank">GitHub</a><a href="https://x.com/BLAMEDXD" target="_blank">X / Twitter</a></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> BL.co. All rights reserved.</span>
+    <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script defer src="assets/main.js"></script>
+<script>
+/* highlight active case-nav-rail link on scroll */
+(function(){
+  var links = document.querySelectorAll('.case-nav-rail a');
+  var blocks = document.querySelectorAll('.case-block[id]');
+  if(!links.length || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var id = entry.target.getAttribute('id');
+      var link = document.querySelector('.case-nav-rail a[href="#'+id+'"]');
+      if(!link) return;
+      if(entry.isIntersecting){ links.forEach(function(l){l.classList.remove('is-active');}); link.classList.add('is-active'); }
+    });
+  }, { rootMargin:'-40% 0px -50% 0px' });
+  blocks.forEach(function(b){ io.observe(b); });
+})();
+</script>
+</body>
+</html>
+
+
+
+
+

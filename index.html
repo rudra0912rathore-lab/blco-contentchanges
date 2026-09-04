@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BL.co — The parent structure for software, web, games, and media.</title>
+<meta name="description" content="BL.co is the parent brand behind a growing ecosystem of digital ventures — software, web products, games, and media — built to organize, launch, and scale with clarity and intent.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2374a9fa'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Hero-only entrance choreography (kept local to this page) */
+.line-mask{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em;}
+.line-inner{display:block;transform:translateY(115%);opacity:0;animation:lineUp .9s var(--ease-soft) forwards;}
+@keyframes lineUp{to{transform:translateY(0);opacity:1;}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.graph-line{stroke:var(--border-strong);stroke-width:1;stroke-dasharray:172;stroke-dashoffset:172;animation:drawLine 1.3s var(--ease-soft) forwards;}
+.graph-line.n1{animation-delay:.9s;} .graph-line.n2{animation-delay:1.0s;} .graph-line.n3{animation-delay:1.1s;} .graph-line.n4{animation-delay:1.2s;} .graph-line.n5{animation-delay:1.3s;}
+@keyframes drawLine{to{stroke-dashoffset:0;}}
+.graph-node{opacity:0;transform-origin:center;animation:nodeIn .6s var(--ease-soft) forwards;}
+.graph-node.core{animation-delay:.75s;} .graph-node.n1{animation-delay:1.15s;} .graph-node.n2{animation-delay:1.25s;} .graph-node.n3{animation-delay:1.35s;} .graph-node.n4{animation-delay:1.45s;} .graph-node.n5{animation-delay:1.55s;}
+@keyframes nodeIn{from{opacity:0;transform:scale(.4);}to{opacity:1;transform:scale(1);}}
+.graph-label{font-family:var(--font-ui);font-size:9.5px;font-weight:600;letter-spacing:.1em;fill:var(--gray-400);opacity:0;animation:nodeIn .6s var(--ease-soft) forwards;}
+.graph-label.n1{animation-delay:1.25s;} .graph-label.n2{animation-delay:1.35s;} .graph-label.n3{animation-delay:1.45s;} .graph-label.n4{animation-delay:1.55s;} .graph-label.n5{animation-delay:1.65s;}
+.graph-pulse{fill:none;stroke:var(--accent);stroke-width:5;opacity:0;animation:pulseRing 3.2s ease-out infinite;}
+@keyframes pulseRing{0%{r:9;opacity:0;}8%{opacity:.5;}60%{r:34;opacity:0;}100%{r:34;opacity:0;}}
+.travel-dot{fill:var(--accent);}
+</style>
+</head>
+<body data-page="home">
+
+<!-- BOOT SEQUENCE — plays once per session -->
+<div id="bl-boot" aria-hidden="true">
+  <img src="assets/bl-co-logo.jpg" alt="BL.co" class="boot-logo" style="width:120px; height:auto; margin-bottom:40px; opacity:.9;">
+  <div class="boot-line" data-boot-line="0">
+    <span class="boot-label">LOADING PROJECTS</span>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+  <div class="boot-line" data-boot-line="1">
+    <span class="boot-label">CONNECTING LABS</span>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+  <div class="boot-line" data-boot-line="2">
+    <span class="boot-label">STATUS: LIVE</span>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+  <div class="boot-status">SYSTEM ONLINE</div>
+  <button class="boot-skip" id="bootSkip">Skip</button>
+</div>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="nav-root"></div>
+<script src="assets/nav.js"></script>
+
+<main id="main">
+
+<header class="hero" id="top" style="padding-top:calc(var(--nav-h) + 96px); position:relative; overflow:hidden;">
+  <div class="grid-overlay"></div>
+  <div class="hero-inner" style="position:relative; z-index:1; max-width:var(--container); margin-inline:auto; padding-inline:var(--margin-d); display:grid; grid-template-columns:1.15fr 0.85fr; gap:72px; align-items:center; padding-bottom:96px;">
+    <div class="hero-copy" style="max-width:640px;">
+      <div class="eyebrow">The Parent Company</div>
+      <h1 class="h-display">
+        <span class="line-mask"><span class="line-inner">Building software, web</span></span>
+        <span class="line-mask"><span class="line-inner" style="animation-delay:.28s">products, games, and</span></span>
+        <span class="line-mask"><span class="line-inner" style="animation-delay:.42s">digital experiments.</span></span>
+      </h1>
+      <p class="body-lg hero-sub" style="margin-top:28px; max-width:48ch; opacity:0; transform:translateY(16px); animation:fadeUp .8s var(--ease-soft) .62s forwards;">
+        BL.co is the parent brand behind a growing ecosystem of digital ventures — built to organize, launch, and scale products with clarity and intent.
+      </p>
+      <div class="btn-row" style="margin-top:40px; opacity:0; transform:translateY(16px); animation:fadeUp .8s var(--ease-soft) .78s forwards;">
+        <a href="projects.html" class="btn btn-primary magnetic">
+          View Projects
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn-ghost magnetic">Contact BL.co</a>
+        <button class="btn btn-ghost magnetic" data-terminal-open style="font-family:var(--font-ui);letter-spacing:.06em;">
+          <svg viewBox="0 0 24 24" fill="none" width="14" height="14" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Terminal
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-visual corner-frame" style="position:relative; aspect-ratio:1/1; background:var(--surface-1); border:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:center; opacity:0; animation:fadeUp 1s var(--ease-soft) .5s forwards;">
+      <div class="grid-overlay" style="opacity:.06;"></div>
+      <svg viewBox="0 0 480 480" style="width:78%; height:78%; position:relative; z-index:1;" aria-label="Diagram of BL.co's five divisions connected to a central node">
+        <line class="graph-line n1" x1="240" y1="240" x2="240" y2="70"/>
+        <line class="graph-line n2" x1="240" y1="240" x2="401.7" y2="187.5"/>
+        <line class="graph-line n3" x1="240" y1="240" x2="339.9" y2="377.5"/>
+        <line class="graph-line n4" x1="240" y1="240" x2="140.1" y2="377.5"/>
+        <line class="graph-line n5" x1="240" y1="240" x2="78.3" y2="187.5"/>
+        <circle class="travel-dot" r="2.4"><animateMotion dur="7s" repeatCount="indefinite" path="M240,240 L339.9,377.5" begin="2s"/></circle>
+        <circle class="travel-dot" r="2.4"><animateMotion dur="8s" repeatCount="indefinite" path="M240,240 L78.3,187.5" begin="4s"/></circle>
+        <circle class="graph-node n1" cx="240" cy="70" r="5" fill="#000" stroke="#ffffff" stroke-width="1.4"/>
+        <circle class="graph-node n2" cx="401.7" cy="187.5" r="5" fill="#000" stroke="#ffffff" stroke-width="1.4"/>
+        <circle class="graph-node n3" cx="339.9" cy="377.5" r="5" fill="#000" stroke="#74a9fa" stroke-width="1.4"/>
+        <circle class="graph-node n4" cx="140.1" cy="377.5" r="5" fill="#000" stroke="#ffffff" stroke-width="1.4"/>
+        <circle class="graph-node n5" cx="78.3" cy="187.5" r="5" fill="#000" stroke="#74a9fa" stroke-width="1.4"/>
+        <text class="graph-label n1" x="240" y="52" text-anchor="middle">SOFTWARE</text>
+        <text class="graph-label n2" x="414" y="178" text-anchor="start">MEDIA</text>
+        <text class="graph-label n3" x="352" y="404" text-anchor="start">LABS</text>
+        <text class="graph-label n4" x="128" y="404" text-anchor="end">ANTAR</text>
+        <text class="graph-label n5" x="66" y="178" text-anchor="end">DESIGN</text>
+        <circle class="graph-pulse" cx="240" cy="240" r="9"/>
+        <circle class="graph-node core" cx="240" cy="240" r="10" fill="#ffffff"/>
+        <text class="graph-label core" x="240" y="266" text-anchor="middle" style="animation-delay:.9s;fill:#8f8f8f;letter-spacing:.14em;">BL.CO</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-strip-inner">
+      <div class="stat"><div class="num" data-countup="4" data-pad="true">00</div><div class="lbl">Companies Active</div></div>
+      <div class="stat"><div class="num"><span class="accent" data-countup="4" data-pad="true">00</span></div><div class="lbl">Ventures In Motion</div></div>
+      <div class="stat"><div class="num">2026</div><div class="lbl">Ecosystem Established</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true" style="border-bottom:1px solid var(--border-subtle);">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Edge Infrastructure</span><span class="sep">◆</span>
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z"/></svg> Serverless Compute</span><span class="sep">◆</span>
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/></svg> Global Distributed Network</span><span class="sep">◆</span>
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2z"/></svg> Typescript Foundation</span><span class="sep">◆</span>
+    </div>
+    <div class="marquee-item">
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Edge Infrastructure</span><span class="sep">◆</span>
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z"/></svg> Serverless Compute</span><span class="sep">◆</span>
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/></svg> Global Distributed Network</span><span class="sep">◆</span>
+      <span class="tech-stack-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2z"/></svg> Typescript Foundation</span><span class="sep">◆</span>
+    </div>
+  </div>
+</div>
+
+<section class="section manifesto-section divider-bottom" style="background:var(--surface-1);">
+  <div class="container">
+    <div class="manifesto-grid">
+      <div class="manifesto-sticky">
+        <div class="eyebrow">The Manifesto</div>
+        <h2 class="h-1 text-balance">The architecture of independent execution.</h2>
+        <p class="body-lg" style="margin-top:24px; color:var(--gray-300);">BL.co is not an agency. We do not take clients. We are an operating system for internal digital ventures. Every product we build must adhere to three core principles before it earns its place in the ecosystem.</p>
+      </div>
+      <div class="manifesto-points" style="display:flex; flex-direction:column; gap:60px; padding-top:40px; padding-bottom:80px;">
+        <div class="manifesto-pt reveal">
+          <div class="pt-num" style="font-family:var(--font-ui); font-size:12px; color:var(--accent); letter-spacing:0.1em; margin-bottom:12px;">01. SHIP FAST</div>
+          <h3 class="h-2">No bureaucracy. Pure output.</h3>
+          <p class="body-md" style="margin-top:16px;">We do not spend months in planning phases. We build functional prototypes within days. If the prototype proves the concept, we scale it. If it fails, we retire it instantly.</p>
+        </div>
+        <div class="manifesto-pt reveal">
+          <div class="pt-num" style="font-family:var(--font-ui); font-size:12px; color:var(--accent); letter-spacing:0.1em; margin-bottom:12px;">02. NO FILLER</div>
+          <h3 class="h-2">Every pixel serves a purpose.</h3>
+          <p class="body-md" style="margin-top:16px;">We reject heavy, bloated software. Our applications are engineered to be lightweight, instantaneous, and strictly functional. We do not use gimmicks to mask poor engineering.</p>
+        </div>
+        <div class="manifesto-pt reveal">
+          <div class="pt-num" style="font-family:var(--font-ui); font-size:12px; color:var(--accent); letter-spacing:0.1em; margin-bottom:12px;">03. PURE ENGINEERING</div>
+          <h3 class="h-2">Built for reliability first.</h3>
+          <p class="body-md" style="margin-top:16px;">Our digital infrastructure is designed to hold up under real-world stress. We plan in years, not launch weeks. Ventures that earn their place are aggressively maintained.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brands">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker-block">
+        <div class="eyebrow">Ecosystem</div>
+        <h2 class="h-1 scramble-text">Four companies. One structure.</h2>
+        <p class="body-md head-sub">Independent in output, unified in standard — each company runs its own ventures on shared infrastructure and one design language.</p>
+      </div>
+      <a href="brands.html" class="card-foot" style="opacity:1; transform:none; position:static;">See All Companies
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="eco-grid reveal">
+      <div class="div-card glow-card feature reveal-child" style="--i:0">
+        <div class="watermark">S</div>
+        <div class="top-row"><h3 class="h-2">BL.Software</h3><div class="status live"><span class="dot"></span>Active</div></div>
+        <div>
+          <p class="body-md div-desc">Software, technology, and digital products — applications and web-based tools built for reliability and real, sustained use.</p>
+          <div class="note"><span class="dot-sm"></span><span>Currently shipping: network diagnostics across 15 measured layers</span></div>
+        </div>
+        <a href="brands.html#software" class="card-foot">Explore BL.Software<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="div-card glow-card reveal-child" style="--i:1">
+        <div class="watermark">M</div>
+        <div class="top-row"><h3 class="h-3">BL.Media</h3><div class="status live"><span class="dot"></span>Active</div></div>
+        <p class="body-md div-desc">Media, content, and production — video, series, and long-form creative work released under the ecosystem's own banners.</p>
+        <a href="brands.html#media" class="card-foot">Explore BL.Media<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="div-card glow-card reveal-child" style="--i:2">
+        <div class="watermark">L</div>
+        <div class="top-row"><h3 class="h-3">BL.Labs</h3><div class="status early"><span class="dot"></span>Experimental</div></div>
+        <p class="body-md div-desc">Research, experimentation, and emerging technology — prototypes and unconventional ideas before they earn their place.</p>
+        <a href="brands.html#labs" class="card-foot">Explore BL.Labs<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="div-card glow-card wide reveal-child" style="--i:3">
+        <div class="watermark">A</div>
+        <div class="top-row"><h3 class="h-2">Antar Studio</h3><div class="status live"><span class="dot"></span>Active</div></div>
+        <p class="body-md div-desc">A creative and experimental studio focused on design, visual work, and studio-led projects — concept-driven output between art and product.</p>
+        <a href="brands.html#antar" class="card-foot">Explore Antar Studio<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BL.CO PULSE — real data only -->
+<section class="section pulse-section">
+  <div class="container">
+    <div class="pulse-header reveal">
+      <div>
+        <div class="pulse-eyebrow">PULSE — Live Signal</div>
+        <p class="body-md" style="margin-top:8px; color:var(--gray-500);">Real numbers. From GitHub and Vercel. Updated every 5 minutes.</p>
+      </div>
+      <div class="pulse-updated" id="pulseUpdated">—</div>
+    </div>
+
+    <div class="pulse-grid reveal">
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">Active Projects</div>
+        <div class="pulse-cell-value loading" id="pulse-projects">—</div>
+        <div class="pulse-cell-sub">Currently building</div>
+      </div>
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">GitHub Commits</div>
+        <div class="pulse-cell-value loading" id="pulse-commits">—</div>
+        <div class="pulse-cell-sub">Last 30 days</div>
+      </div>
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">Deployments</div>
+        <div class="pulse-cell-value loading" id="pulse-deploys">—</div>
+        <div class="pulse-cell-sub">Total production ships</div>
+      </div>
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">Latest Ship</div>
+        <div class="pulse-cell-value loading" style="font-size:1.4rem;" id="pulse-latest">—</div>
+        <div class="pulse-cell-sub">Via Vercel</div>
+      </div>
+    </div>
+
+    <div class="pulse-chart reveal">
+      <div class="pulse-chart-label">GitHub Activity — Last 12 Weeks</div>
+      <div class="pulse-bars" id="pulse-chart-bars">
+        <!-- filled by JS -->
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section zone-alt divider-top divider-bottom" id="projects">
+  <div class="container">
+    <div class="section-head reveal" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;">
+      <div class="kicker-block">
+        <div class="eyebrow">Selected Work</div>
+        <h2 class="h-1 scramble-text">What's in motion.</h2>
+        <p class="body-md head-sub">A running log of the ventures currently shipping inside the ecosystem.</p>
+      </div>
+      <div class="segmented-control" id="projectFilter">
+        <div class="seg-pill"></div>
+        <button class="seg-btn active" data-filter="all">All</button>
+        <button class="seg-btn" data-filter="software">Software</button>
+        <button class="seg-btn" data-filter="web">Web</button>
+      </div>
+    </div>
+
+    <div class="proj-list reveal">
+      <div class="proj-row reveal-child" style="--i:0">
+        <div class="proj-index">01</div>
+        <div class="proj-name">BloomVerse</div>
+        <div class="proj-cat">BL.Software</div>
+        <div class="proj-desc">A digital bouquet experience — send flowers that move, carry music, and hold a voice note.</div>
+        <div class="proj-meta"><div class="status progress"><span class="dot"></span>In Progress</div><span class="year">Coming Soon</span></div>
+      </div>
+      <div class="proj-row reveal-child" style="--i:1">
+        <div class="proj-index">02</div>
+        <div class="proj-name">Fallen in the Wrong World</div>
+        <div class="proj-cat">BL.Media</div>
+        <div class="proj-desc">A dual-timeline mystery series spanning the present day and 1648.</div>
+        <div class="proj-meta"><div class="status progress"><span class="dot"></span>In Progress</div><span class="year">Coming Soon</span></div>
+      </div>
+      <div class="proj-row reveal-child" style="--i:2">
+        <div class="proj-index">03</div>
+        <div class="proj-name">NEXUS</div>
+        <div class="proj-cat">Webtastic Games</div>
+        <div class="proj-desc">A tic-tac-toe game rebuilt from scratch — five visual themes and a minimax engine that doesn't lose.</div>
+        <div class="proj-meta"><div class="status live"><span class="dot"></span>Live</div><a href="project-nexus.html">Case Study →</a></div>
+      </div>
+      <div class="proj-row reveal-child" style="--i:3">
+        <div class="proj-index">04</div>
+        <div class="proj-name">4¹⁵ TESTS</div>
+        <div class="proj-cat">BL.Software</div>
+        <div class="proj-desc">A network diagnostics platform measuring connection quality across fifteen layers, not just one number.</div>
+        <div class="proj-meta"><div class="status live"><span class="dot"></span>Live</div><span class="year">2026</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker-block"><div class="eyebrow">Why BL.co</div><h2 class="h-1 scramble-text">Built differently, on purpose.</h2></div>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item reveal-child" style="--i:0"><h3 class="h-2">Clean structure</h3><p class="body-md">One system governs every product — the same code standards, the same design language, the same bar for what ships.</p></div>
+      <div class="why-item reveal-child" style="--i:1"><h3 class="h-2">Multi-company ecosystem</h3><p class="body-md">Four companies share infrastructure and process, so each new venture starts ahead — not from zero.</p></div>
+      <div class="why-item reveal-child" style="--i:2"><h3 class="h-2">Product-first mindset</h3><p class="body-md">Every decision serves the person using the product, not the pitch used to describe it.</p></div>
+      <div class="why-item reveal-child" style="--i:3"><h3 class="h-2">Built for the long term</h3><p class="body-md">We plan in years, not launch weeks. Ventures that earn their place are maintained, not abandoned.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS — cinematic, scroll-linked timeline
+     ============================================================ -->
+<section class="section zone-alt divider-top divider-bottom">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker-block"><div class="eyebrow">Process</div><h2 class="h-1">How a venture moves through BL.co.</h2></div>
+    </div>
+
+    <div class="process-track reveal" id="processTrack">
+      <div class="process-line-wrap">
+        <div class="process-line-fill" id="processFill"></div>
+        <div class="process-indicator" id="processIndicator"></div>
+      </div>
+      <div class="process-rail">
+        <div class="proc-step"><div class="proc-num">01</div><div class="proc-accent"></div><h3 class="h-2">Idea</h3><p class="body-md">Every venture starts as one specific problem worth solving — not a trend worth chasing.</p></div>
+        <div class="proc-step"><div class="proc-num">02</div><div class="proc-accent"></div><h3 class="h-2">Build</h3><p class="body-md">Design and engineering move together. Nothing ships until it's been used, broken, and fixed.</p></div>
+        <div class="proc-step"><div class="proc-num">03</div><div class="proc-accent"></div><h3 class="h-2">Launch</h3><p class="body-md">A focused release to real users, with the infrastructure already in place to support it.</p></div>
+        <div class="proc-step"><div class="proc-num">04</div><div class="proc-accent"></div><h3 class="h-2">Scale</h3><p class="body-md">What earns its place stays and grows. What doesn't, gets retired without ceremony.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about-teaser">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2 class="h-1 text-balance">A structure built to outlast any single product.</h2>
+        <a href="about.html" class="btn btn-quiet" style="margin-top:28px;">Read the Full Story</a>
+      </div>
+      <div class="about-copy">
+        <p class="editorial">"We don't chase every idea. We build the ones with a clear reason to exist — and hold them to the same standard."</p>
+        <p class="body-lg" style="margin-top:24px;">BL.co is the operating structure behind a set of independent digital ventures — software, web products, games, and media, each with its own name and its own audience, all sharing one infrastructure and one bar for quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section divider-top" id="contact" style="padding-top:120px; padding-bottom:120px; text-align:center;">
+  <div class="cta-watermark" aria-hidden="true" style="top:50%; transform:translateY(-50%);">SYSTEM</div>
+  <div class="container cta-inner reveal" style="max-width:600px; margin:0 auto; position:relative; z-index:2;">
+    <div class="eyebrow" style="justify-content:center;">Early Access</div>
+    <h2 class="h-1 text-balance" style="margin-bottom:24px;">Request terminal access.</h2>
+    
+    <div style="display:flex; justify-content:center; gap:8px; margin-bottom:32px;">
+      <button id="toggleClassic" class="btn-ghost" style="padding:4px 12px; font-size:12px; border-radius:4px; height:auto; min-height:0; color:var(--white); border-color:var(--border-strong);">Classic</button>
+      <button id="toggleTerminal" class="btn-ghost" style="padding:4px 12px; font-size:12px; border-radius:4px; height:auto; min-height:0; color:var(--gray-400); border-color:transparent;">Terminal</button>
+    </div>
+    
+    <!-- Terminal Mode Signup -->
+    <div id="signupTerminal" class="terminal-signup glow-card" style="display:none; background:#0a0a0a; border:1px solid var(--border-strong); border-radius:8px; padding:24px; text-align:left; font-family:var(--font-ui); font-size:14px; position:relative; overflow:hidden;">
+      <div style="display:flex; gap:6px; margin-bottom:16px;">
+        <span style="width:10px; height:10px; border-radius:50%; background:#ff5f56; flex-shrink:0;"></span>
+        <span style="width:10px; height:10px; border-radius:50%; background:#ffbd2e; flex-shrink:0;"></span>
+        <span style="width:10px; height:10px; border-radius:50%; background:#27c93f; flex-shrink:0;"></span>
+      </div>
+      <p style="color:var(--gray-400); margin-bottom:12px;">// Connect to the BL.co ecosystem network</p>
+      <form class="terminal-form">
+        <span style="color:var(--accent);">blco@sys:~$</span>
+        <span style="color:var(--white);">register</span>
+        <input type="email" placeholder="enter_your_email" required style="background:transparent; border:none; border-bottom:1px solid var(--border-strong); color:var(--white); font-family:var(--font-ui); font-size:14px; outline:none; flex-grow:1; caret-color:var(--accent); min-width:200px; padding-bottom:4px;">
+        <button type="submit" class="btn-ghost" style="padding:6px 12px; font-size:11px; border-radius:4px; height:auto; min-height:0; color:var(--gray-300);">EXECUTE</button>
+      </form>
+    </div>
+    
+    <!-- Classic Mode Signup -->
+    <div id="signupClassic" style="display:block; text-align:center;">
+      <p class="body-md" style="color:var(--gray-400); margin-bottom:24px;">Join the waiting list for early access to our ecosystem tools.</p>
+      <form class="newsletter" style="max-width:400px; margin:0 auto; display:flex; gap:12px;">
+        <input type="email" placeholder="Your email address" aria-label="Email for early access" required style="flex-grow:1; background:var(--surface-1); border:1px solid var(--border-strong); color:var(--white); padding:12px 16px; border-radius:4px; font-family:var(--font-sans); outline:none;">
+        <button type="submit" class="btn" style="padding:12px 24px; font-size:14px; background:var(--white); color:var(--black); border-radius:4px; font-weight:500;">Join</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">BL<span class="dot">.</span>co</a>
+      <p class="body-md">The parent structure for software, web products, games, and digital experiments.</p>
+      
+    </div>
+    <div class="footer-col"><span class="h-3">Companies</span><a href="brands.html#software">BL.Software</a><a href="brands.html#media">BL.Media</a><a href="brands.html#labs">BL.Labs</a><a href="brands.html#antar">Antar Studio</a></div>
+    <div class="footer-col"><span class="h-3">Portfolio</span><a href="projects.html">All Projects</a><a href="project-nexus.html">Case Study: Nexus</a><a href="journal.html">Journal</a></div>
+    <div class="footer-col"><span class="h-3">Company</span><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><span class="h-3">Connect</span><a href="mailto:hello@bl.co">hello@bl.co</a><a href="#">Instagram</a><a href="#">X / Twitter</a></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> BL.co. All rights reserved.</span>
+    <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script defer src="assets/main.js"></script>
+<script defer src="assets/terminal.js"></script>
+<script>
+// ── BOOT SEQUENCE ──────────────────────────────────────────────────────────
+(function() {
+  var boot = document.getElementById('bl-boot');
+  var skip = document.getElementById('bootSkip');
+  if (!boot) return;
+  // Only play once per session
+  if (sessionStorage.getItem('bl_booted')) { boot.remove(); return; }
+  sessionStorage.setItem('bl_booted', '1');
+
+  function dismissBoot() {
+    boot.classList.add('hiding');
+    setTimeout(function() { boot.remove(); }, 520);
+  }
+  if (skip) skip.addEventListener('click', dismissBoot);
+  document.addEventListener('keydown', function kd(e) {
+    if (boot.parentNode) { dismissBoot(); document.removeEventListener('keydown', kd); }
+  }, { once: true });
+
+  // Animate bars sequentially
+  var lines = boot.querySelectorAll('[data-boot-line]');
+  var status = boot.querySelector('.boot-status');
+  var delay = 120;
+  lines.forEach(function(line, i) {
+    setTimeout(function() {
+      line.classList.add('visible');
+      var fill = line.querySelector('.boot-bar-fill');
+      if (fill) { fill.style.width = '0'; setTimeout(function(){ fill.style.width = '100%'; }, 40); }
+    }, delay + i * 380);
+  });
+  // Show status then dismiss
+  setTimeout(function() {
+    if (status) status.classList.add('visible');
+    setTimeout(dismissBoot, 640);
+  }, delay + lines.length * 380 + 200);
+})();
+
+// ── PULSE DATA ────────────────────────────────────────────────────────────
+(function() {
+  function set(id, val) { var el = document.getElementById(id); if(el){ el.textContent = val; el.classList.remove('loading'); } }
+  function formatDate(ts) {
+    if (!ts) return '--';
+    var d = new Date(typeof ts === 'number' ? ts : ts);
+    return d.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+  }
+  fetch('/api/pulse').then(function(r){ return r.json(); }).then(function(d) {
+    set('pulse-projects', d.config.activeProjects);
+    set('pulse-commits', d.github.commits30d !== null ? d.github.commits30d : '--');
+    set('pulse-deploys', d.vercel.deployments !== null ? d.vercel.deployments : '--');
+    set('pulse-latest', formatDate(d.vercel.latestAt));
+    var upd = document.getElementById('pulseUpdated');
+    if (upd) upd.textContent = 'Updated ' + new Date(d.fetchedAt).toLocaleTimeString();
+    // Render activity bars
+    var bars = document.querySelectorAll('#pulse-chart-bars .pulse-bar');
+    var act = d.github.weeklyActivity || [];
+    var max = Math.max.apply(null, act.concat([1]));
+    bars.forEach(function(bar, i) {
+      var val = act[i] || 0;
+      var pct = Math.max(6, Math.round((val / max) * 100));
+      bar.style.height = pct + '%';
+      bar.title = val + ' commits';
+      if (val > 0) bar.setAttribute('data-active', 'true');
+    });
+  }).catch(function() {
+    ['pulse-projects','pulse-commits','pulse-deploys','pulse-latest'].forEach(function(id){
+      var el = document.getElementById(id); if(el){ el.textContent = '--'; el.classList.remove('loading'); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
+
+
+
