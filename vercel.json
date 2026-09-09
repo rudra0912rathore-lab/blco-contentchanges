@@ -1,4 +1,6 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "name": "blco-website",
-  "framework": null
+  "framework": null,
+  "installCommand": ""
 }
