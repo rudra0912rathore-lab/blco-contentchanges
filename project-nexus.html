@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexus — Case Study — BL.co</title>
-<meta name="description" content="How Webtastic Games rebuilt tic-tac-toe from scratch — five themes, a minimax engine, and a case for taking small games seriously.">
+<title>Nexus Case Study BL.co</title>
+<meta name="description" content="How Webtastic Games rebuilt tic-tac-toe from scratch five themes, a minimax engine, and a case for taking small games seriously.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2374a9fa'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,18 +59,18 @@
       <div class="case-block reveal" id="overview">
         <div class="eyebrow">Overview</div>
         <p class="editorial">"A game this simple has nowhere to hide. Every decision shows."</p>
-        <p class="body-lg" style="margin-top:24px;">Nexus is Webtastic Games' first shipped title — a from-scratch rebuild of tic-tac-toe with five visual themes and an unbeatable minimax opponent. It exists to prove a small, deliberately constrained idea can still be built to a real standard: considered motion, a genuine AI opponent instead of a random one, and a visual system that changes the feel of the game without changing the rules.</p>
+        <p class="body-lg" style="margin-top:24px;">Nexus is Webtastic Games' first shipped title a from-scratch rebuild of tic-tac-toe with five visual themes and an unbeatable minimax opponent. It exists to prove a small, deliberately constrained idea can still be built to a real standard: considered motion, a genuine AI opponent instead of a random one, and a visual system that changes the feel of the game without changing the rules.</p>
       </div>
 
       <div class="case-block reveal" id="challenge">
         <div class="eyebrow">Challenge</div>
-        <p>Tic-tac-toe is a solved game — with perfect play, it always ends in a draw. That's precisely what made it hard to design for. The brief wasn't "build tic-tac-toe," it was "make a solved game worth playing anyway." That meant the entire experience had to carry weight the ruleset couldn't: feel, pacing, visual identity, and an opponent that plays convincingly rather than randomly.</p>
+        <p>Tic-tac-toe is a solved game with perfect play, it always ends in a draw. That's precisely what made it hard to design for. The brief wasn't "build tic-tac-toe," it was "make a solved game worth playing anyway." That meant the entire experience had to carry weight the ruleset couldn't: feel, pacing, visual identity, and an opponent that plays convincingly rather than randomly.</p>
       </div>
 
       <div class="case-block reveal" id="research">
         <div class="eyebrow">Research</div>
         <div class="case-two-col">
-          <p>We looked at how mobile game studios handle "solved" classics — checkers, connect four, chess openings — and found the pattern consistently: the ones that hold attention lean entirely on presentation and opponent quality, since the ruleset offers no fresh ground.</p>
+          <p>We looked at how mobile game studios handle "solved" classics checkers, connect four, chess openings and found the pattern consistently: the ones that hold attention lean entirely on presentation and opponent quality, since the ruleset offers no fresh ground.</p>
           <p>We also tested a dozen casual tic-tac-toe implementations already live on the web. Almost all used a random or lightly-weighted AI that could be beaten by accident. None had a theming system with real visual range rather than palette swaps.</p>
         </div>
       </div>
@@ -78,21 +78,21 @@
       <div class="case-block reveal" id="process">
         <div class="eyebrow">Process</div>
         <p>Development split into two parallel tracks from day one: the game engine (board state, win detection, the minimax opponent with alpha-beta pruning for instant response) and the presentation layer (five themes, each with its own motion timing, palette, and win-state animation). Keeping these decoupled meant a theme could be swapped without touching game logic, and the engine could be hardened without any visual regression risk.</p>
-        <p>Playtesting focused on one question: does the opponent feel smart within the first three moves? Early builds played optimally from move one, which read as robotic. The shipped version plays a wider opening book before tightening into perfect defensive play mid-game — closer to how a sharp human opponent actually plays.</p>
+        <p>Playtesting focused on one question: does the opponent feel smart within the first three moves? Early builds played optimally from move one, which read as robotic. The shipped version plays a wider opening book before tightening into perfect defensive play mid-game closer to how a sharp human opponent actually plays.</p>
       </div>
 
       <div class="case-block reveal" id="design-system">
         <div class="eyebrow">Design System</div>
-        <p>Each of the five themes — Mono, Terminal, Paper, Neon Low, and Dusk — is a full token set: board color, mark color, grid weight, win-line animation, and sound-off haptic-style feedback via subtle motion. Themes share layout and spacing so switching never feels like a different app, only a different mood.</p>
+        <p>Each of the five themes Mono, Terminal, Paper, Neon Low, and Dusk is a full token set: board color, mark color, grid weight, win-line animation, and sound-off haptic-style feedback via subtle motion. Themes share layout and spacing so switching never feels like a different app, only a different mood.</p>
         <div class="case-gallery">
-          <div class="g-item"><span>Theme Grid — Placeholder</span></div>
-          <div class="g-item"><span>Win-State Animation — Placeholder</span></div>
+          <div class="g-item"><span>Theme Grid Placeholder</span></div>
+          <div class="g-item"><span>Win-State Animation Placeholder</span></div>
         </div>
       </div>
 
       <div class="case-block reveal" id="development">
         <div class="eyebrow">Development</div>
-        <p>The opponent runs minimax with alpha-beta pruning and a shallow opening-move randomizer, evaluated client-side in well under a frame — no server round-trip, no loading state between moves. The whole build ships as static assets, so it loads instantly and works offline once cached.</p>
+        <p>The opponent runs minimax with alpha-beta pruning and a shallow opening-move randomizer, evaluated client-side in well under a frame no server round-trip, no loading state between moves. The whole build ships as static assets, so it loads instantly and works offline once cached.</p>
         <div class="case-tech-list">
           <span>Vanilla JavaScript</span><span>Canvas Rendering</span><span>Minimax + Alpha-Beta Pruning</span><span>CSS Custom Properties (Theming)</span><span>Service Worker Caching</span>
         </div>
@@ -103,7 +103,7 @@
             <div class="term-line"><span class="term-prompt">$</span> bl deploy nexus --division=games</div>
             <div class="term-line"><span class="term-ok">?</span> Build complete <span class="term-dim">(1.8s)</span></div>
             <div class="term-line"><span class="term-ok">?</span> 5 themes compiled, 0 regressions</div>
-            <div class="term-line"><span class="term-ok">?</span> Assets optimized <span class="term-dim">— 78KB total</span></div>
+            <div class="term-line"><span class="term-ok">?</span> Assets optimized <span class="term-dim">78KB total</span></div>
             <div class="term-line"><span class="term-dim">?</span> Deploying to production...</div>
             <div class="term-line"><span class="term-ok">?</span> Live at <span class="term-prompt">nexus.bl.co</span></div>
           </div>
@@ -112,7 +112,7 @@
 
       <div class="case-block reveal" id="results">
         <div class="eyebrow">Results</div>
-        <p>Nexus shipped as Webtastic Games' proof of concept for the studio's actual thesis: small scope, real depth. It's the reference point every later Webtastic Games project gets measured against — if a mechanic can't hold up the way Nexus's opponent logic does, it isn't ready to ship.</p>
+        <p>Nexus shipped as Webtastic Games' proof of concept for the studio's actual thesis: small scope, real depth. It's the reference point every later Webtastic Games project gets measured against if a mechanic can't hold up the way Nexus's opponent logic does, it isn't ready to ship.</p>
         <div class="case-stats" style="border-top:none; padding-top:0; margin-top:24px;">
           <div><div class="k">Themes Shipped</div><div class="v" data-countup="5">0</div></div>
           <div><div class="k">AI Response Time</div><div class="v">&lt; 16ms</div></div>
@@ -124,10 +124,10 @@
       <div class="case-block reveal" id="gallery">
         <div class="eyebrow">Gallery</div>
         <div class="case-gallery">
-          <div class="g-item"><span>Board — Mono Theme</span></div>
-          <div class="g-item"><span>Board — Terminal Theme</span></div>
-          <div class="g-item"><span>Board — Paper Theme</span></div>
-          <div class="g-item"><span>Board — Dusk Theme</span></div>
+          <div class="g-item"><span>Board Mono Theme</span></div>
+          <div class="g-item"><span>Board Terminal Theme</span></div>
+          <div class="g-item"><span>Board Paper Theme</span></div>
+          <div class="g-item"><span>Board Dusk Theme</span></div>
         </div>
       </div>
 
@@ -146,7 +146,7 @@
 <section class="case-next zone-alt divider-top">
   <div class="container reveal">
     <div class="label-caps" style="margin-bottom:18px;">Next Project</div>
-    <a href="projects.html">4¹5 Tests ?</a>
+    <a href="projects.html">45 Tests ?</a>
   </div>
 </section>
 

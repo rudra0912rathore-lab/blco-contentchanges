@@ -1,11 +1,11 @@
-// api/pulse.js — BL.co PULSE data endpoint
+// api/pulse.js BL.co PULSE data endpoint
 // Real sources only: GitHub public API + Vercel deployments API
 // 5-minute server-side cache via Cache-Control
 
 const GITHUB_USER = 'BLAMEDXD';
 const VERCEL_PROJECT_ID = 'prj_nEFJKtp9yQHOgW4APtFGhH8e63O1';
 
-// Manual config — update as BL.co grows
+// Manual config update as BL.co grows
 const MANUAL = {
   activeProjects: 3,
   journalEntries: 7,
